@@ -1,6 +1,6 @@
-from Framework import *
-from Define import *
-from PluginManager import *
+from Core.Framework import *
+from Core.Define import *
+from Core.PluginManager import *
 import requests
 
 rprint = print

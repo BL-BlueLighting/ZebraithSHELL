@@ -1,10 +1,10 @@
 import rich
 from rich.console import Console
-from Define import *
-from Framework import *
-from PluginManager import *
+from Core.Define import *
+from Core.Framework import *
+from Core.PluginManager import *
 from exceptiongroup import (print_exception)
-import PluginInstaller as pi
+import Core.PluginInstaller as pi
 
 """
 Zebraith SHELL.
@@ -78,7 +78,7 @@ def version():
 def logostyle(style: CommandAPI):
     style = style.GetArg('style')
     if style in ["1", "2", "3", "4", "5", "6"]:
-        open("./logo.txt", "w").write(open(f"./logostyles/logo_style{style}.txt").read())
+        open("./logo.txt", "w").write(open(f"./logos/logo_style{style}.txt").read())
         print(f"Logo style has been changed to {style}.")
     else:
         print(f"Logo style {style} is not found.")

@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./Logo.png" alt="Zebraith SHELL, logo">
+    <img src="./logos/Logo.png" alt="Zebraith SHELL, logo">
     <h2>Zebraith SHELL.</h2>
     <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-blue">
     <img alt="PL Python" src="https://img.shields.io/badge/Language-Python-yellow">
