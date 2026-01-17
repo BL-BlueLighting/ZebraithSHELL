@@ -24,7 +24,7 @@ def exit_command(args):
     print("    Goodbye.")
     exit()
 
-@register_command("plugin", ["action:str", "act2:str"])
+@register_command("plugin", ["action", "act2"])
 def plugin_command(args):
     act = args.GetArg("action")
     act2 = args.GetArg("act2")
@@ -44,4 +44,10 @@ def plugin_command(args):
         else:
             pm.load_from_file(act2)
             print("    Loaded plugin " + act2 + ".")
+    elif act == "unload":
+        if act2 == "all":
+            pm.unload_all_plugin()
+            print("    Unloaded all plugins.")
+    else:
+        print("    Invalid action.")
 END

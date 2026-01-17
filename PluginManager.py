@@ -84,7 +84,7 @@ class PluginManager:
         self.loaded_plugins: Dict[str, PluginInfo] = {}
         self.failed_plugins_file_list: List[str] = []
 
-    def load_from_file(self, file_path: str):
+    def load_from_file(self, file_path: str, skipload):
         """从文件路径加载插件"""
         if not os.path.exists(file_path):
             error(None, f"    - Plugin file not found: {file_path}")
@@ -93,44 +93,46 @@ class PluginManager:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
-            returnv = self.load_from_string(content)
+            returnv = self.load_from_string(content, skipload)
             if returnv == -1:
                 self.failed_plugins_file_list.append(file_path)
         except Exception as e:
             error(e, f"    - Failed to load plugin from file: {file_path}")
             self.failed_plugins_file_list.append(file_path)
 
-    def load_all_plugins(self):
+    def load_all_plugins(self, skipload = False):
         """加载所有插件"""
         for file_name in os.listdir("plugins"):
             if file_name.endswith(".zshellext"):
-                self.load_from_file(os.path.join("plugins", file_name))
+                self.load_from_file(os.path.join("plugins", file_name), skipload)
 
-    def load_from_string(self, content: str):
+    def load_from_string(self, content: str, skipload):
         """从字符串内容加载插件"""
         context = self.parser.parse(content)
         
-        if not context.Info:
-            slowprint("         - Plugin missing information block. Skipping.")
+        if not context.Info and skipload:
+            if not skipload: slowprint("         - Plugin missing information block. Skipping.")
             return -1
+        elif not context.Info: return -1
         
         name = context.Info.Name
-        if name in self.loaded_plugins:
-            slowprint(f"        - Plugin '{name}' is already loaded. Skipping.")
+        if name in self.loaded_plugins and skipload:
+            if not skipload: slowprint(f"        - Plugin '{name}' is already loaded. Skipping.")
             return -1
+        elif name in self.loaded_plugins: return -1
 
-        slowprint(f"        - Loading plugin {name} v{context.Info.Version} by {context.Info.Author}")
+        if not skipload: slowprint(f"        - Loading plugin {name} v{context.Info.Version} by {context.Info.Author}")
         
         if context.Code:
-            self._execute_plugin_code(context.Code)
+            self._execute_plugin_code(context.Code, skipload)
             self.loaded_plugins[name] = context.Info
-            slowprint(f"            \\ Plugin {name} loaded successfully.")
+            if not skipload: slowprint(f"            \\ Plugin {name} loaded successfully.")
         else:
-            slowprint("             \\ Plugin missing code block. Skipping.")
+            if not skipload: slowprint("             \\ Plugin missing code block. Skipping.")
             return -1
         return 0
 
-    def _execute_plugin_code(self, code_str: str):
+    def _execute_plugin_code(self, code_str: str, skipload = False):
         """
         执行插件代码
         核心逻辑：将全局的 register_command 注入到 exec 的环境中
@@ -144,12 +146,20 @@ class PluginManager:
         }
 
         if "# ADVANCED TAG #" in code_str:
-            print("            \\ Advanced plugin mode detected. For security, Please check plugin code using AI or you.")
+            if not skipload: print("            \\ Advanced plugin mode detected. For security, Please check plugin code using AI or you.")
             exec_globals ["pm"] = self # 对于 BasePlugin.zshellext 特殊放权。
+            exec_globals ["rich"] = rich
 
         try:
             exec(code_str, exec_globals)
         except Exception as e:
-            error(e, "         \\ Failed to execute plugin code.")
+            if not skipload: error(e, "         \\ Failed to execute plugin code.")
             import traceback
             traceback.print_exc()
+    
+    def unload_all_plugin(self):
+        """卸载所有插件"""
+        item = self.loaded_plugins.items()
+        for name, info in item:
+            slowprint(f"        - Unloading plugin {name} v{info.Version} by {info.Author}")
+            del self.loaded_plugins[name]

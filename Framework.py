@@ -39,7 +39,8 @@ class Command:
         :return: 回调函数的返回值
         """
         if self.Head not in commands_registry:
-            error(Any, f"Command {self.Head} not registered.")
+            rich.print("[bold cyan][ TIP ][/bold cyan] Command not found.")
+            return
 
         cmd_info = commands_registry[self.Head]
         callback = cmd_info.get("callback")
@@ -155,7 +156,7 @@ class CommandParser:
 Commands: Dict[str, Dict[str, Any]] = {}
 
 # 注册命令的装饰器
-def register_command(name: str, params: List[str]):
+def register_command(name: str, params: List[str], Commands: Dict[str, Dict[str, Any]] = Commands):
     def decorator(func: Callable):
         Commands[name] = {
             "params": params,
