@@ -3,8 +3,10 @@
     <h2>Zebraith SHELL.</h2>
     <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-blue">
     <img alt="PL Python" src="https://img.shields.io/badge/Language-Python-yellow">
+    <p>Logo 使用了来自 Haley Wakamatsu 的 MONSTER FRIEND 2 字体。</p>
 </div>
 <hr/>
+<br/>
 
 ## 这是什么？
 Zebraith SHELL 是一个基于 Python 的 Terminal Emulator (终端模拟器) 程序。
