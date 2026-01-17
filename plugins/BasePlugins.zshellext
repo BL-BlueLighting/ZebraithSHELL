@@ -1,0 +1,47 @@
+ZebraithSHELL
+Extension File.
+
+-- BASE PLUGINS, DON'T REMOVE --
+-- 基本插件，不要删除 --
+
+// 不在代码范围内的均视为注释。
+
+BEGIN INFORMATION
+class Info(IZebraithPluginInfo):
+    def __init__(self):
+        self.Name = "Base"
+        self.Version = "1.0.0"
+        self.Author = "BL.BlueLighting"
+        self.Description = "Base commands for ZebraithSHELL."
+END
+
+BEGIN CODE
+# ADVANCED TAG #
+# 获得 pm
+
+@register_command("exit", [])
+def exit_command(args):
+    print("    Goodbye.")
+    exit()
+
+@register_command("plugin", ["action:str", "act2:str"])
+def plugin_command(args):
+    act = args.GetArg("action")
+    act2 = args.GetArg("act2")
+
+    if act == "list":
+        if act2 == "failed":
+            for plugin in pm.failed_plugins_file_list:
+                print("    Failed to load plugin " + plugin + ".")
+        else:
+            print("    Plugins:")
+            for plugin in pm.loaded_plugins:
+                print("        " + plugin.Name + " - " + plugin.Version + " by " + plugin.Author)
+    elif act == "load":
+        if act2 == "all":
+            pm.load_all_plugins()
+            print("    Loaded all plugins.")
+        else:
+            pm.load_from_file(act2)
+            print("    Loaded plugin " + act2 + ".")
+END

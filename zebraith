@@ -1,0 +1,5 @@
+#!/bin/bash
+# Zebraith SHELL.
+
+python3 MainProgram.py
+pause > nul

@@ -1,0 +1,19 @@
+ZebraithSHELL
+Extension File.
+
+// 不在代码范围内的均视为注释。
+
+BEGIN INFORMATION
+class Info(IZebraithPluginInfo):
+    def __init__(self):
+        self.Name = "ExamplePlugin"
+        self.Version = "1.0.0"
+        self.Author = "BL.BlueLighting"
+        self.Description = "Example Plugin for ZebraithSHELL"
+END
+
+BEGIN CODE
+@register_command("example", [])
+def ExampleCommand(args):
+    print("Hello, World!")
+END
