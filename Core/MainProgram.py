@@ -4,7 +4,7 @@ from Define import *
 from Framework import *
 from PluginManager import *
 from exceptiongroup import (print_exception)
-import Core.PluginInstaller as pi
+import PluginInstaller as pi
 
 """
 Zebraith SHELL.
