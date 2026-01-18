@@ -21,7 +21,7 @@ class PluginInstaller:
         self.plugins = plugins
     
     def register_all(self):
-        @register_command("zpm", ["action", "more1", "more2", "more3"], self.command)
+        @RegisterCommand("zpm", ["action", "more1", "more2", "more3"], self.command)
         def zpm_action(args: CommandAPI):
             rprint(PILOGO)
             print("[cyan]ZEBRAITH[/cyan] Package Manager")

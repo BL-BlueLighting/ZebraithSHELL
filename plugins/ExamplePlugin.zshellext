@@ -13,7 +13,7 @@ class Info(IZebraithPluginInfo):
 END
 
 BEGIN CODE
-@register_command("example", [])
+@RegisterCommand("example", [])
 def ExampleCommand(args):
     print("Hello, World!")
 END

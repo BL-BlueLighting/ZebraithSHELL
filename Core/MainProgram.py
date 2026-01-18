@@ -70,13 +70,13 @@ if len(plugins.failed_plugins_file_list) > 0:
 zpm = pi.PluginInstaller(Commands, plugins)
 zpm.register_all()
 
-@register_command("version", [])
+@RegisterCommand("version", [])
 def version():
     print(open("./logo.txt", "r").read())
     slowprint("VERSION " + VERSION)
     slowprint("Made by BL.BlueLighting with ❤️")
 
-@register_command("logostyle", ["style"])
+@RegisterCommand("logostyle", ["style"])
 def logostyle(style: CommandAPI):
     style = style.GetArg('style')
     if style in ["1", "2", "3", "4", "5", "6"]:
@@ -85,11 +85,11 @@ def logostyle(style: CommandAPI):
     else:
         print(f"Logo style {style} is not found.")
 
-@register_command("clear", [])
+@RegisterCommand("clear", [])
 def clear(api):
     hard_clear()
 
-@register_command("clearAgain", [])
+@RegisterCommand("clearAgain", [])
 def clearAgain(api):
     hard_clear()
     print(open("./logo.txt", "r").read())
@@ -98,7 +98,7 @@ def clearAgain(api):
     if len(plugins.failed_plugins_file_list) > 0:
         print(f"        \\ Failed to load {len(plugins.failed_plugins_file_list)} plugins. \n        \\ Use 'plugin list failed' to list all failed plugins.")
 
-@register_command("reboot", [])
+@RegisterCommand("reboot", [])
 def reboot(api):
     print("Rebooting...")
     time.sleep(0.5)

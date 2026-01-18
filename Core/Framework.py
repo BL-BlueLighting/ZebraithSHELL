@@ -156,7 +156,7 @@ class CommandParser:
 Commands: Dict[str, Dict[str, Any]] = {}
 
 # 注册命令的装饰器
-def register_command(name: str, params: List[str], Commands: Dict[str, Dict[str, Any]] = Commands):
+def RegisterCommand(name: str, params: List[str], Commands: Dict[str, Dict[str, Any]] = Commands):
     def decorator(func: Callable):
         Commands[name] = {
             "params": params,

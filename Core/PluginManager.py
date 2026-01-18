@@ -77,7 +77,7 @@ class PluginManager:
     """
     插件管理器
     负责加载插件文件，解析并执行其中的代码，
-    使插件中的 @register_command 能够注册到全局 Commands 表中。
+    使插件中的 @RegisterCommand 能够注册到全局 Commands 表中。
     """
     def __init__(self):
         self.parser = PluginParser()
@@ -135,14 +135,14 @@ class PluginManager:
     def _ExecutePluginCode(self, code_str: str, skipload = False):
         """
         执行插件代码
-        核心逻辑：将全局的 register_command 注入到 exec 的环境中
+        核心逻辑：将全局的 RegisterCommand 注入到 exec 的环境中
         """
         import __main__
         
         exec_globals = {
             "__name__": "zebraith_plugin",
             "__builtins__": __builtins__,
-            "register_command": register_command,
+            "RegisterCommand": RegisterCommand,
         }
 
         if "# ADVANCED TAG #" in code_str:
