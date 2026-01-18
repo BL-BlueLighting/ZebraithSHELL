@@ -89,7 +89,7 @@ class PluginInstaller:
                                 print(f":: Plugin {plugin} installed.")
                                 print(f"\n:: Loading {plugin}...")
 
-                                self.plugins.load_from_file(plugin, False)
+                                self.plugins.LoadPluginFromFile(plugin, False)
                                 print(f":: Plugin {plugin} loaded.")
                             except Exception as e:
                                 print(f"\n:: Failed to install plugin {plugin}. Please try again later.")

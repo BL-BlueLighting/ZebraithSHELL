@@ -5,3 +5,4 @@ skipload
 .vscode
 .idea
 .idea/*
+skipload.*

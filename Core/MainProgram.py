@@ -23,27 +23,29 @@ plugins = PluginManager()
 nowDirectory = "~"
 cparser = CommandParser()
 
-VERSION = "1.0.0"
+VERSION = "1.3.0"
 
 #endregion
 
 #region MAIN LOGIC
 
+hard_clear()
+
 if not (os.path.exists("./skipload")):
 
     print(open("./logo.txt", "r").read())
-    slowprint("VERSION, " + VERSION)
+    slowprint("Version " + VERSION)
     slowprint("Initializing...\n")
 
     slowprint("    + Loading base plugins...")
-    slowprint("        - Plugin 'BaseCommands', Author 'BL.BlueLighting' Loaded.")
-    slowprint("        - Plugin 'Zebraith Package Manager', Author 'BL.BlueLighting' Loaded.")
+    slowprint("        :: Plugin 'BaseCommands', Author 'BL.BlueLighting' Loaded.")
+    slowprint("        :: Plugin 'Zebraith Package Manager', Author 'BL.BlueLighting' Loaded.")
     slowprint("    + Base plugins load finished.")
 
     print("")
 
     slowprint("    + Loading custom plugins...")
-    plugins.load_all_plugins()
+    plugins.LoadAllPlugins()
     slowprint("    + Custom plugins load finished.")
 
     print("")
@@ -52,7 +54,7 @@ if not (os.path.exists("./skipload")):
     time.sleep(0.5)
 
 else:
-    plugins.load_all_plugins(skipload=True)
+    plugins.LoadAllPlugins(skipload=True)
 
 open("./errors.log", "w").write("")
 
