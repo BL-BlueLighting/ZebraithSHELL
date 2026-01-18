@@ -2,7 +2,7 @@ import re
 import os
 from typing import Dict, Any, Optional
 from dataclasses import dataclass
-from Core.Framework import *
+from Framework import *
 
 """
 Zebraith SHELL.

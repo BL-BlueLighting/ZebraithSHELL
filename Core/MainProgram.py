@@ -1,8 +1,8 @@
 import rich
 from rich.console import Console
-from Core.Define import *
-from Core.Framework import *
-from Core.PluginManager import *
+from Define import *
+from Framework import *
+from PluginManager import *
 from exceptiongroup import (print_exception)
 import Core.PluginInstaller as pi
 
