@@ -101,7 +101,10 @@ def reboot(api):
     print("Rebooting...")
     time.sleep(0.5)
     hard_clear()
-    os.system("python MainProgram.py")
+    is3 = ""
+    if platform.system() != "Windows":
+        is3 = "3"
+    os.system(f"python{is3} ./Core/MainProgram.py") # 对 linux 添加 python -> python3
     exit()
 
 print("")
