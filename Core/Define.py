@@ -14,7 +14,7 @@ def slowprint(text: str):
 
 def error(exception: Exception | Any, content: str):
     rich.print(f"[bold red][ ERROR ][/bold red]", end = "")
-    rich.print(" Failed to execute command. \n           For more information, please see informations under.")
+    rich.print(" Failed to execute command. \n          For more information, please see informations under.")
     if type(exception) == Any:
         rich.print(f"    {content}")
     else:

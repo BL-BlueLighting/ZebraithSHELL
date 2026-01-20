@@ -5,4 +5,5 @@ skipload
 .vscode
 .idea
 .idea/*
-skipload.*
+*.ign
+*.zshellext
