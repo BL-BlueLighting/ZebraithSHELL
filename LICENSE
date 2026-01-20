@@ -1,0 +1,171 @@
+ZebraithSHELL, Main License, Two Languages Version.
+
+[ CHINESE ]
+
+ZebraithSHELL 主许可证 2026
+许可证发布方：BL.BlueLighting for ZebraithSHELL
+生效日期：2026年1月20日
+
+序言
+本许可证具有法律效力。违反本许可证条款可能导致法律追责。请所有使用本仓库代码的开发者遵守以下条款。
+
+第一章：分发与使用
+第1条：商业与私人使用
+本仓库允许私人和商业的二次分发。
+
+在二次分发（无论公开或私人发布）时，必须包含本许可证全文。
+
+第2条：代码修改与注入
+禁止对已发布的 ZebraithSHELL 程序进行任何形式的代码注入、运行时修改或二进制补丁，除非程序本身明确提供相关扩展接口。
+
+如需进行合法的代码集成或扩展开发，请事先与原作者联系获取书面许可。
+
+第3条：分支与公开分发
+允许创建代码分支（Fork）及公开的二次分发。
+
+在分发二进制文件或开源代码时，必须包含本许可证文件。
+
+第二章：署名与命名规范
+第4条：代码使用程度定义
+轻度使用：引用本仓库少于30%的源代码，或仅使用部分工具函数、算法模块。
+
+重度使用：引用本仓库30%及以上源代码，或核心架构、主要功能基于本仓库代码。
+
+第5条：署名要求
+轻度使用：
+
+在项目的 README 或文档中明确标注代码来源："包含/基于 ZebraithSHELL (https://[原仓库地址]) 的代码"。
+
+重度使用：
+
+在项目的 README 或文档中明确标注代码来源，包括原项目链接。
+
+必须在您的项目名称中体现与原项目的关联，使用以下格式之一：
+
+[您的项目名] (基于 ZebraithSHELL)
+
+ZebraithSHELL [您的定制描述] 版本
+
+ZebraithSHELL (修改版)
+
+第6条：命名限制
+禁止使用以下可能误导用户的命名方式：
+
+暗示官方升级或下一代产品：如 "ZebraithSHELL Pro", "ZebraithSHELL 2.0", "ZebraithSHELL Next"
+
+暗示官方分支或特别授权版本：如 "ZebraithSHELL [组织名] Branch", "官方 ZebraithSHELL 分支"
+
+任何可能使用户混淆产品来源的名称
+
+第三章：法律条款
+第7条：免责声明
+本软件按"原样"提供，不附带任何明示或暗示的担保，包括但不限于适销性、特定用途适用性的担保。
+
+作者不对因使用本软件造成的任何直接、间接、偶然、特殊或后果性损害承担责任。
+
+第8条：许可证终止
+违反本许可证任何条款将自动终止您的使用、修改和分发权利。
+
+终止后，您必须在30天内停止使用、销毁所有副本，并从分发渠道撤回相关产品。
+
+第9条：管辖法律
+本许可证受中华人民共和国法律管辖，任何争议应提交至原作者所在地有管辖权的人民法院诉讼解决。
+
+第四章：附则
+第10条：定义说明
+"二次分发"：包括但不限于二进制发布、源码发布、集成到其他产品中分发。
+
+"代码注入"：指通过任何技术手段修改已编译程序的执行流程或数据结构。
+
+第11条：协议兼容性
+如本许可证条款与项目中所含其他开源许可证冲突，以更严格的条款为准。
+
+第12条：修改与更新
+本许可证的最终解释权归 BL.BlueLighting 所有。作者保留随时更新许可证条款的权利，更新后的条款将在原仓库公布。
+
+版权所有 © 2026 BL.BlueLighting。保留所有权利。
+
+[ ENGLISH ]
+
+ZebraithSHELL Main License 2026
+Licensed by BL.BlueLighting for ZebraithSHELL
+Effective Date: January 20, 2026
+
+Preamble
+This license has legal effect. Violation of its terms may result in legal action. All developers using code from this repository must comply with the following terms.
+
+Chapter 1: Distribution and Use
+Article 1: Commercial and Private Use
+This repository permits private and commercial redistribution.
+
+Any redistribution (public or private) must include the full text of this license.
+
+Article 2: Code Modification and Injection
+Prohibited: Any form of code injection, runtime modification, or binary patching to released ZebraithSHELL programs, unless the program explicitly provides extension interfaces.
+
+For legitimate code integration or extension development, contact the original author for written permission.
+
+Article 3: Forks and Public Distribution
+Creating forks and public redistribution are permitted.
+
+When distributing binary files or open-source code, must include this license file.
+
+Chapter 2: Attribution and Naming Conventions
+Article 4: Code Usage Level Definitions
+Light Use: Incorporating less than 30% of source code from this repository, or using only partial utility functions/algorithm modules.
+
+Heavy Use: Incorporating 30% or more source code from this repository, or basing core architecture/main functionality on this repository's code.
+
+Article 5: Attribution Requirements
+Light Use:
+
+Clearly attribute code source in project README or documentation: "Includes/based on code from ZebraithSHELL (https://[original repository URL])".
+
+Heavy Use:
+
+Clearly attribute code source in project README or documentation, including original project link.
+
+Must reflect association with original project in your project name using one of these formats:
+
+[Your Project Name] (Based on ZebraithSHELL)
+
+ZebraithSHELL [Your Custom Description] Edition
+
+ZebraithSHELL (Modified)
+
+Article 6: Naming Restrictions
+Prohibited naming conventions that may mislead users:
+
+Implying official upgrades or next-generation products: e.g., "ZebraithSHELL Pro", "ZebraithSHELL 2.0", "ZebraithSHELL Next"
+
+Implying official branches or specially authorized versions: e.g., "ZebraithSHELL [Organization] Branch", "Official ZebraithSHELL Fork"
+
+Any names likely to confuse users about product origin
+
+Chapter 3: Legal Provisions
+Article 7: Disclaimer
+This software is provided "as is", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose.
+
+Author shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from the use of this software.
+
+Article 8: License Termination
+Violation of any terms automatically terminates your rights to use, modify, and distribute.
+
+Upon termination, you must within 30 days cease use, destroy all copies, and withdraw related products from distribution channels.
+
+Article 9: Governing Law
+This license shall be governed by the laws of the People's Republic of China. Any disputes shall be submitted to the competent people's court at the original author's location.
+
+Chapter 4: Supplementary Provisions
+Article 10: Definitions
+"Redistribution": Includes but not limited to binary distribution, source code distribution, integration into other products for distribution.
+
+"Code Injection": Modifying execution flow or data structures of compiled programs through any technical means.
+
+Article 11: License Compatibility
+If conflicts arise between this license and other open-source licenses in the project, the more restrictive terms shall prevail.
+
+Article 12: Modifications and Updates
+BL.BlueLighting reserves final interpretation rights. Author reserves right to update license terms at any time, with updated terms published in the original repository.
+
+Copyright © 2026 BL.BlueLighting. All rights reserved.
