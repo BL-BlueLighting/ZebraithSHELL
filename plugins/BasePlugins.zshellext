@@ -50,4 +50,8 @@ def plugin_command(args):
             print("    Unloaded all plugins.")
     else:
         print("    Invalid action.")
+
+@RegisterCommand("echo", ["command"])
+def help_command(args):
+    print(args.GetArg("command"))
 END

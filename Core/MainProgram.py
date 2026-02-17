@@ -5,6 +5,7 @@ from Framework import *
 from PluginManager import *
 from exceptiongroup import (print_exception)
 import PluginInstaller as pi
+import DesktopEnvironment as de
 
 """
 Zebraith SHELL.
@@ -38,7 +39,7 @@ if not (os.path.exists("./skipload")):
     slowprint("Initializing...\n")
 
     slowprint("    + Loading base plugins...")
-    slowprint("        :: Plugin 'BaseCommands', Author 'BL.BlueLighting' Loaded.")
+    slowprint("        :: Plugin 'Zebraith Desktop Environment', Author 'BL.BlueLighting' Loaded.")
     slowprint("        :: Plugin 'Zebraith Package Manager', Author 'BL.BlueLighting' Loaded.")
     slowprint("    + Base plugins load finished.")
 
