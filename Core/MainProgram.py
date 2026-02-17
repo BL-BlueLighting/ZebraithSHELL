@@ -1,4 +1,4 @@
-import rich
+import os, base64
 from rich.console import Console
 from Define import *
 from Framework import *
@@ -83,7 +83,10 @@ def logostyle(style: CommandAPI):
     if style in ["1", "2", "3", "4", "5", "6"]:
         open("./logo.txt", "w").write(open(f"./logos/logo_style{style}.txt").read())
         print(f"Logo style has been changed to {style}.")
+    elif style == "114":
+        exec(open("./logos/poweredby.txt", "r").readlines() [4])
     else:
+        
         print(f"Logo style {style} is not found.")
 
 @RegisterCommand("clear", [])

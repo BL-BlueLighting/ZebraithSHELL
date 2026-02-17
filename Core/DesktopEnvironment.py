@@ -5,7 +5,8 @@ from dataclasses import dataclass
 from Framework import *
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QHBoxLayout, QVBoxLayout,
-    QPushButton, QLabel, QFrame, QMenu, QGridLayout, QStyle
+    QPushButton, QLabel, QFrame, QMenu, QGridLayout, QStyle,
+    QAction
 )
 from PyQt5.QtCore import QTimer, Qt, QTime
 from PyQt5.QtGui import QFont, QColor, QPalette
@@ -47,6 +48,13 @@ class DesktopIcon(QWidget):
 
 
 class MainWindow(QMainWindow):
+    def back_terminal(self):
+        self.destroy()
+        self.close()
+    
+    def terminate_terminal(self):
+        sys.exit()
+
     def __init__(self):
         print("Zebraith Desktop Environment v0.0.1")
         print("By BL.BlueLighting")
@@ -112,13 +120,8 @@ class MainWindow(QMainWindow):
         self.start_button.setFont(QFont("Sans", 12))
         self.start_button.setFlat(True)
         self.start_button.setStyleSheet("color: white;")
-        self.start_button.clicked.connect(self.on_start_button_clicked)
         self.start_menu = QMenu()
-        self.start_menu.addAction("应用程序")
-        self.start_menu.addAction("文件")
-        self.start_menu.addSeparator()
-        self.start_menu.addAction("设置")
-        self.start_menu.addAction("关机")
+        self.start_menu.addAction("ZEBRAITH SHELL DESKTOP ENVIRONMENT")
         self.start_button.setMenu(self.start_menu)
 
         taskbar_layout.addWidget(self.start_button)
@@ -164,13 +167,9 @@ class MainWindow(QMainWindow):
         current = QTime.currentTime()
         self.clock_label.setText(current.toString("hh:mm"))
 
-    def on_start_button_clicked(self):
-        """Start button clicked"""
-        ...
-        #TODO: Finish this
-
 @RegisterCommand("startd", ["cmd"])
 def _ (args):
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
+    app.exec_()
