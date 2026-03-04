@@ -1,5 +1,6 @@
 {
     "TestPlugin": {
+        "Name": "TestPlugin"
         "Version": "v1.0.0",
         "DownloadLink": "/source/plugins/testplugin_v1.zshellext"
     }
